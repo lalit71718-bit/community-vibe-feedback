@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Vibe | 2026 Hackathon Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Glowing Aurora Orbs -->
+    <div class="aurora-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="app-wrapper">
+        <!-- Top Hero Header -->
+        <header class="hero-header">
+            <div class="badge-pill">
+                <span class="pulse-dot"></span> 2026 Hackathon Edition
+            </div>
+            <h1>Community Vibe</h1>
+            <p class="subtitle">Share your experience and get an instant organizer response.</p>
+        </header>
+
+        <!-- Main Split Dashboard -->
+        <main class="dashboard-grid">
+            <!-- Left Column: Interactive Form Card -->
+            <section class="glass-panel form-panel">
+                <div class="panel-header">
+                    <h2>Submit Your Feedback</h2>
+                    <span>All fields marked * are required</span>
+                </div>
+
+                <form id="feedbackForm">
+                    <!-- 1. Identity Row -->
+                    <div class="input-row">
+                        <div class="field-box">
+                            <label for="name">Participant Name</label>
+                            <input type="text" id="name" placeholder="e.g., Aarav Sharma">
+                        </div>
+                        <div class="field-box">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="you@domain.com" required>
+                        </div>
+                    </div>
+
+                    <!-- 2. Interactive Star Ratings Bento -->
+                    <div class="input-row">
+                        <div class="bento-rating-box">
+                            <div class="rating-info">
+                                <span class="rating-emoji">🏛️</span>
+                                <div>
+                                    <label>Venue & Space *</label>
+                                    <small>Comfort, power & seating</small>
+                                </div>
+                            </div>
+                            <div class="star-picker" data-target="venueRating">
+                                <span class="star active" data-value="1">★</span>
+                                <span class="star active" data-value="2">★</span>
+                                <span class="star active" data-value="3">★</span>
+                                <span class="star active" data-value="4">★</span>
+                                <span class="star active" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" id="venueRating" value="5" required>
+                        </div>
+
+                        <div class="bento-rating-box">
+                            <div class="rating-info">
+                                <span class="rating-emoji">🍕</span>
+                                <div>
+                                    <label>Food & Fuel *</label>
+                                    <small>Meals, coffee & midnight snacks</small>
+                                </div>
+                            </div>
+                            <div class="star-picker" data-target="foodRating">
+                                <span class="star active" data-value="1">★</span>
+                                <span class="star active" data-value="2">★</span>
+                                <span class="star active" data-value="3">★</span>
+                                <span class="star active" data-value="4">★</span>
+                                <span class="star active" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" id="foodRating" value="5" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. Wi-Fi Quality Interactive Pills -->
+                    <div class="field-box">
+                        <label>Wi-Fi & Network Reliability *</label>
+                        <div class="pill-group" data-target="wifiQuality">
+                            <button type="button" class="pill-btn active" data-value="Flawless / Fast">⚡ Flawless / Fast</button>
+                            <button type="button" class="pill-btn" data-value="Mostly stable with minor drops">📶 Mostly Stable</button>
+                            <button type="button" class="pill-btn" data-value="Frequently disconnected / Slow">⚠️ Slow / Drops</button>
+                        </div>
+                        <input type="hidden" id="wifiQuality" value="Flawless / Fast" required>
+                    </div>
+
+                    <!-- 4. Mentorship Support Interactive Pills -->
+                    <div class="field-box">
+                        <label>Mentorship & Technical Support *</label>
+                        <div class="pill-group" data-target="mentorshipSupport">
+                            <button type="button" class="pill-btn active" data-value="Extremely helpful & available">🌟 Super Helpful</button>
+                            <button type="button" class="pill-btn" data-value="Available, but hard to get time">⏳ Busy / Limited</button>
+                            <button type="button" class="pill-btn" data-value="Scarcely available">🔍 Hard to Find</button>
+                            <button type="button" class="pill-btn" data-value="Did not use">🙌 Didn't Need</button>
+                        </div>
+                        <input type="hidden" id="mentorshipSupport" value="Extremely helpful & available" required>
+                    </div>
+
+                    <!-- 5. Community Vibe Interactive Pills -->
+                    <div class="field-box">
+                        <label>Overall Community Vibe *</label>
+                        <div class="pill-group" data-target="communityVibe">
+                            <button type="button" class="pill-btn active" data-value="Inspirational & Collaborative">🔥 Inspirational</button>
+                            <button type="button" class="pill-btn" data-value="Chaotic but fun">🚀 Chaotic & Fun</button>
+                            <button type="button" class="pill-btn" data-value="Stressed / Disorganized">🌪️ Disorganized</button>
+                            <button type="button" class="pill-btn" data-value="Neutral">☕ Chill / Neutral</button>
+                        </div>
+                        <input type="hidden" id="communityVibe" value="Inspirational & Collaborative" required>
+                    </div>
+
+                    <!-- 6. Open Comments -->
+                    <div class="field-box">
+                        <label for="comments">Additional Highlights or Suggestions</label>
+                        <textarea id="comments" rows="3" placeholder="Shoutout a mentor, suggest a prize, or share your favorite moment..."></textarea>
+                    </div>
+
+                    <button type="submit" class="glow-submit-btn">
+                        <span>Generate & Submit Feedback</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Right Column: AI Response + Live Feed -->
+            <aside class="sidebar-column">
+                <!-- Instant Auto-Reply Banner -->
+                <div id="responseBox" class="glass-panel ai-response-card hidden">
+                    <div class="ai-badge">✨ Instant Organizer Reply</div>
+                    <p id="replyText"></p>
+                </div>
+
+                <!-- Live Feed -->
+                <div class="glass-panel feed-panel">
+                    <div class="panel-header">
+                        <h2>Live Pulse Feed</h2>
+                        <span id="feedCount" class="count-badge">0 entries</span>
+                    </div>
+                    <div id="feedbackList" class="feed-scroll"></div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
